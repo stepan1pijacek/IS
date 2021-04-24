@@ -1,4 +1,7 @@
-﻿<Window x:Class="IS.MainWindow"
+﻿<!--
+    @Author: Stepan Pijacek & Jakub Sobona    
+-->
+    <Window x:Class="IS.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -22,7 +25,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Column="1" Grid.Row="1" Height="Auto" VerticalAlignment="Top" Width="1040" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{x:Null}">
-            <Grid>
+            <Grid HorizontalAlignment="Center" Width="1040" Height="670" VerticalAlignment="Bottom">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200"/>
                     <RowDefinition Height="*"/>
@@ -91,7 +94,7 @@
                         </Rectangle.Effect>
                     </Rectangle>
                     <Grid Margin="25 5" Height="200">
-                        <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0" Background="Blue">
+                        <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0" Background="#FF686E93">
                             <materialDesign:PackIcon Kind="Message" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
                         </Grid>
                         <TextBlock x:Name="Message" Text="Messageboard" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"></TextBlock>
@@ -139,11 +142,29 @@
                     </Grid>
                 </Grid>
 
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Rectangle Height="200" Margin="20,0,0,0" Fill="White" RadiusY="10" RadiusX="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="307">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="200">
+                        <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FF686E93">
+                            <materialDesign:PackIcon Kind="CalendarAlert" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
+                        </Grid>
+                        <TextBlock Text="End of schoolyear" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock x:Name="isLeft" Text="000" Foreground="Gray" FontSize="40" FontFamily="Champagne &amp; Limousines"/>
+                            <TextBlock Text="Days" Foreground="Gray" FontSize="20" VerticalAlignment="Bottom" Margin="10" FontFamily="Champagne &amp; Limousines"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
             </Grid>
 
         </Grid>
 
-        <Grid Grid.Row="1" Background="#FF686E93" Grid.RowSpan="2">
+        <Grid Grid.Row="1" Background="#FF686E93" Grid.RowSpan="2" HorizontalAlignment="Center" Width="200">
             <!--<Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="LightGray" Offset="1"/>

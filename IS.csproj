@@ -17,7 +17,6 @@
     <Folder Include="Pages\Delete\" />
     <Folder Include="Pages\Update\" />
     <Folder Include="Pages\Read\" />
-    <Folder Include="View\" />
   </ItemGroup>
 
 </Project>

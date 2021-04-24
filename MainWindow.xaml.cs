@@ -1,18 +1,7 @@
-﻿using IS.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using IS.View;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace IS
 {
@@ -21,11 +10,18 @@ namespace IS
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly ISDbContext dbContext;
-        public MainWindow(ISDbContext dbContext)
+        public MainWindow()
         {
-            this.dbContext = dbContext;
             InitializeComponent();
+            DateTime dateTime = new DateTime(2021, 5, 31);
+            TimeSpan timeLeft = dateTime - DateTime.Now;
+            isLeft.Text = timeLeft.Days.ToString();
+
+            MWviewModel model = new MWviewModel();
+
+            NoOfStudents.Text = model.getStudents();
+            NoOfFaculty.Text = model.getFaculties();
+            Average.Text = model.getAVG();
             //GetStudent();
         }
 
