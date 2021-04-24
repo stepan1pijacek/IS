@@ -3,28 +3,226 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:sys="clr-namespace:System;assembly=netstandard"
         xmlns:local="clr-namespace:IS"
         mc:Ignorable="d"
         Background="LightGray"
-        Title="MainWindow" Height="720" Width="1240">
+        Title="IS - Home" WindowStartupLocation="CenterScreen" WindowState="Maximized" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="473*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="328*"/>
+            <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="1" AutoGenerateColumns="False" Margin="5" Name="StudentGD" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Student ID" Binding="{Binding Id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Date of birt" Binding="{Binding DateOfBirth}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"></DataGridTextColumn>
-                <DataGridTextColumn Header="FacultyId" Binding="{Binding FacultyId}"></DataGridTextColumn>
+        <Grid Grid.Column="1" Grid.Row="1" Height="Auto" VerticalAlignment="Top" Width="1040" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            </DataGrid.Columns>
-        </DataGrid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Rectangle Margin="0 0 0 40" Fill="White" RadiusY="10" RadiusX="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center" Width="307" Height="120" VerticalAlignment="Bottom" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="30" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FF31A82B">
+                            <materialDesign:PackIcon Kind="Person" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
+                        </Grid>
+                        <TextBlock Text="Number of enroled students" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"/>
+                        <TextBlock x:Name="NoOfStudents" Text="1125" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Gray" Margin="5" FontSize="40" FontFamily="Champagne &amp; Limousines"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="15">
+                            <materialDesign:PackIcon Kind="MessageAlert" Foreground="Blue"/>
+                            <TextBlock HorizontalAlignment="Center" Margin="10 0 0 0" Text="This is a global number of all the students" FontFamily="Champagne &amp; Limousines" Foreground="Gray"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Rectangle Height="120" Margin="20,0,0,0" Fill="White" RadiusY="10" RadiusX="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="307">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="30" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FFFFDC00">
+                            <materialDesign:PackIcon Kind="Building" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
+                        </Grid>
+                        <TextBlock Text="Number of existing faculty" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"/>
+                        <TextBlock x:Name="NoOfFaculty" Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Gray" Margin="5" FontSize="40" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="2" Grid.Row="0">
+                    <Rectangle Height="120" Margin="0,0,20,0" Fill="White" RadiusY="10" RadiusX="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Right" Width="307" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="120">
+                        <Grid Width="30" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0" Background="#FFFF5100">
+                            <materialDesign:PackIcon Kind="Globe" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
+                        </Grid>
+                        <TextBlock Text="Global average score " HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"/>
+                        <TextBlock x:Name="Average" Text="4.6" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Gray" Margin="5" FontSize="40" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="5" Grid.ColumnSpan="3">
+                    <Rectangle Height="200" Width="1000" HorizontalAlignment="Center" VerticalAlignment="Center" RadiusX="10" RadiusY="10" Fill="White">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"></DropShadowEffect>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25 5" Height="200">
+                        <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 0" Background="Blue">
+                            <materialDesign:PackIcon Kind="Message" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
+                        </Grid>
+                        <TextBlock x:Name="Message" Text="Messageboard" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"></TextBlock>
+                        <Grid Margin="5" Width="870" Height="120">
+                            <Rectangle Height="120" Width="870" RadiusY="10" RadiusX="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Fill="LightGray">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect BlurRadius="10" Color="DarkGray" RenderingBias="Quality" Opacity="0.1"></DropShadowEffect>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" Cursor="Hand">
+                                <materialDesign:PackIcon Kind="MessageOff" Margin="10 0" Foreground="White" />
+                                <TextBlock Text="You have zero new messages" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limousines"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Rectangle Height="200" Margin="20,0,0,0" Fill="White" RadiusY="10" RadiusX="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="307">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="200">
+                        <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FF686E93">
+                            <materialDesign:PackIcon Kind="Clock" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
+                        </Grid>
+                        <TextBlock Text="Current time" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"/>
+                        <TextBlock x:Name="time" Text="{Binding Source={x:Static sys:DateTime.Now},StringFormat='{}{0:HH:mm:ss}'}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Gray" Margin="5" FontSize="40" FontFamily="Champagne &amp; Limousines" />
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Rectangle Height="200" Margin="20,0,0,0" Fill="White" RadiusY="10" RadiusX="10" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="307">
+                        <Rectangle.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Grid Margin="25" Height="200">
+                        <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FF686E93">
+                            <materialDesign:PackIcon Kind="Calendar" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
+                        </Grid>
+                        <TextBlock Text="Current date" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="Gray" Margin="5" FontSize="17" FontFamily="Champagne &amp; Limousines"/>
+                        <TextBlock x:Name="date" Text="{Binding Source={x:Static sys:DateTime.Now},StringFormat='{}{0:dd.MM.yyyy}'}" HorizontalAlignment="Right" Margin="35" VerticalAlignment="Center" Foreground="Gray" FontSize="39" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#FF686E93" Grid.RowSpan="2">
+            <!--<Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="LightGray" Offset="1"/>
+                    <GradientStop Color="#FFE6E6E6"/>
+                </LinearGradientBrush>
+            </Grid.Background>-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="5" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+            </Grid.Effect>
+
+            <Grid Background="#FF5555F9" Effect="{DynamicResource MaterialDesignShadowDepth1}" >
+                <TextBlock Text="IS" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Impact" Foreground="White" FontSize="45"/>
+            </Grid>
+
+            <StackPanel Grid.Row="1">
+
+                <Button x:Name="Create" Margin="10" Background="#FF686E93" BorderBrush="DarkBlue" Click="Create_Click">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Create" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Create" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button x:Name="Table" Margin="10" Background="#FF686E93" BorderBrush="DarkBlue" Click="Table_Click">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Table" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Tables" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button x:Name="Statistic" Margin="10" Background="#FF686E93" BorderBrush="DarkBlue" Click="Create_Click">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="About" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Statistics" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button x:Name="Faculties" Margin="10" Background="#FF686E93" BorderBrush="DarkBlue" Click="Create_Click">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Building" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Faculties" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+                <Button x:Name="Configuration" Margin="10" Background="#FF686E93" BorderBrush="DarkBlue">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Configuration" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="15" Grid.Row="1">
+                <materialDesign:PackIcon Kind="Copyright" HorizontalAlignment="Left" Height="9" Foreground="White" />
+                <TextBlock FontSize="9"  Foreground="White" FontFamily="Impact">
+                    2021 Stepan Pijacek and Jakub Sobona
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="TitleBar" Grid.ColumnSpan="3" Background="#FF686E93" MouseDown="TitleBar_MouseDown">
+            <TextBlock HorizontalAlignment="Left" Text="IS - Home" VerticalAlignment="Center" FontFamily="Impact" Margin="10 5" FontSize="15" Foreground="White"></TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Background="{x:Null}" Margin="5">
+                <Button x:Name="Home" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Width="25" Height="25" Click="Home_Click">
+                    <materialDesign:PackIcon Kind="Home"/>
+                </Button>
+                <Button x:Name="Min" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Width="25" Height="25" Click="Min_Click">
+                    <materialDesign:PackIcon Kind="WindowMinimize"/>
+                </Button>
+                <Button x:Name="Max" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Width="25" Height="25" Click="Max_Click">
+                    <materialDesign:PackIcon Kind="Resize"/>
+                </Button>
+                <Button x:Name="PowerOff" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Width="25" Height="25" Click="PowerOff_Click">
+                    <materialDesign:PackIcon Kind="Power"/>
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

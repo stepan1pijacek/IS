@@ -28,41 +28,41 @@
                 <Label BorderThickness="1" BorderBrush="Black" Grid.Row="0" Grid.Column="0" Width="620" HorizontalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center">Name</TextBlock>
                 </Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="0" Text="{Binding Name}" Grid.ColumnSpan="2" Margin="610,0,10,0"/>
+                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="0" Text="{Binding Name}" Grid.Column="1"/>
 
                 <Label BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.Column="0" Width="620" HorizontalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center">Surname</TextBlock>
                 </Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Text="{Binding Surname}" Grid.ColumnSpan="2" Margin="610,34,10,34" Grid.RowSpan="3"/>
+                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Text="{Binding Surname}" Margin="0,34,0,34" Grid.RowSpan="3" Grid.Column="1"/>
 
                 <Label BorderThickness="1" BorderBrush="Black" Grid.Row="2" Grid.Column="0" Width="620" HorizontalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center">Date of birth</TextBlock>
                 </Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="2" Text="{Binding DateOfBirth}" Grid.ColumnSpan="2" Margin="610,0,10,34" Grid.RowSpan="2"/>
+                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="2" Text="{Binding DateOfBirth}" Margin="0,0,0,34" Grid.RowSpan="2" Grid.Column="1"/>
 
                 <Label BorderThickness="1" BorderBrush="Black" Grid.Row="3" Grid.Column="0" Width="620" HorizontalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center">Email</TextBlock>
                 </Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="3" Text="{Binding Email}" Grid.ColumnSpan="2" Margin="610,0,10,0"/>
+                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="3" Text="{Binding Email}" Grid.Column="1"/>
 
                 <Label BorderThickness="1" BorderBrush="Black" Grid.Row="4" Grid.Column="0" Width="620" HorizontalAlignment="Center">
                     <TextBlock HorizontalAlignment="Center">Phone</TextBlock>
                 </Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="3" Text="{Binding Phone}" Grid.ColumnSpan="2" Margin="610,34,10,0" Grid.RowSpan="2"/>
+                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="3" Text="{Binding Phone}" Margin="0,34,0,34" Grid.RowSpan="3" Grid.Column="1"/>
 
                 <Label BorderThickness="1" BorderBrush="Black" Grid.Row="5" Grid.Column="0" Width="620" HorizontalAlignment="Center">
                     <TextBlock>
                         Start of the programm
                     </TextBlock>
                 </Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="4" Text="{Binding Year}" Grid.ColumnSpan="2" Margin="610,34,10,34" Grid.RowSpan="3"/>
+                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="5" Text="{Binding Year}" Margin="0,1,0,33" Grid.RowSpan="2" Grid.Column="1"/>
 
                 <Label BorderThickness="1" BorderBrush="Black" Grid.Row="6" Grid.Column="0" Width="620" HorizontalAlignment="Center">
                     <TextBlock>
                         Name of the Faculty
                     </TextBlock>
                 </Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="6" Text="{Binding FacultyID}" Grid.ColumnSpan="2" Margin="610,0,10,0"/>
+                <TextBox BorderThickness="1" BorderBrush="Black" Background="LightGray" Grid.Row="6" Text="{Binding FacultyID}" Grid.Column="1"/>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
