@@ -13,35 +13,35 @@ namespace IS.View
         {
         }
 
-        public string getStudents()
-        {
-            int count;
-            using(var dbContext = new ISDbContext()) 
-            { 
-                count = dbContext.Students.Count();
-            }
-            return count.ToString();
-        }
+        //public string getStudents()
+        //{
+        //    int count;
+        //    using(var dbContext = new ISDbContext()) 
+        //    { 
+        //        count = dbContext.Students.Count();
+        //    }
+        //    return count.ToString();
+        //}
 
-        public string getFaculties()
-        {
-            int count;
-            using (var dbContext = new ISDbContext())
-            {
-                count = dbContext.Faculties.Count();
-            }
-            return count.ToString();
-        }
+        //public string getFaculties()
+        //{
+        //    int count;
+        //    using (var dbContext = new ISDbContext())
+        //    {
+        //        count = dbContext.Faculties.Count();
+        //    }
+        //    return count.ToString();
+        //}
 
-        public string getAVG()
-        {
-            double res;
-            using (var dbContext = new ISDbContext())
-            {
-                var select = dbContext.Scores.Select(o => o.Score1);
-                res = (double)select.Average();
-            }
-            return res.ToString();
-        }
+        //public string getAVG()
+        //{
+        //    double res;
+        //    using (var dbContext = new ISDbContext())
+        //    {
+        //        var select = dbContext.Scores.Select(o => o.Score1);
+        //        res = (double)select.Average();
+        //    }
+        //    return res.ToString();
+        //}
     }
 }

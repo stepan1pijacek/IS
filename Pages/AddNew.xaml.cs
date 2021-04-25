@@ -1,35 +1,26 @@
 ﻿using System;
-using IS.View;
-using IS.Pages;
+using System.Collections.Generic;
+using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
-namespace IS
+namespace IS.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddNew.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddNew : Window
     {
-        public MainWindow()
+        public AddNew()
         {
             InitializeComponent();
-            DateTime dateTime = new DateTime(2021, 5, 31);
-            TimeSpan timeLeft = dateTime - DateTime.Now;
-            isLeft.Text = timeLeft.Days.ToString();
-
-            MWviewModel model = new MWviewModel();
-
-            //NoOfStudents.Text = model.getStudents();
-            //NoOfFaculty.Text = model.getFaculties();
-            //Average.Text = model.getAVG();
-            //GetStudent();
         }
-
-        //private void GetStudent()
-        //{
-        //    StudentGD.ItemsSource = dbContext.Students.ToList();
-        //}
 
         private void PowerOff_Click(object sender, RoutedEventArgs e)
         {
@@ -60,17 +51,37 @@ namespace IS
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            AddNew addNew = new AddNew();
-            addNew.Show();
-            this.Close();
+
         }
 
         private void Table_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Faculties_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Statistic_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreateFaculty_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreateSubject_Click(object sender, RoutedEventArgs e)
         {
 
         }
