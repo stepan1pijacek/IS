@@ -85,5 +85,10 @@ namespace IS.Pages
         {
 
         }
+
+        private void CreateScore_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

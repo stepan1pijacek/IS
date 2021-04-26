@@ -9,7 +9,7 @@
         mc:Ignorable="d" 
         Background="LightGray"
         AllowsTransparency="True" 
-        WindowStyle="None" WindowState="Maximized" d:DesignHeight="783">
+        WindowStyle="None" WindowState="Maximized" d:DesignHeight="799.284">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -21,13 +21,13 @@
             <RowDefinition Height="328*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="1" Grid.Row="1" Height="Auto" VerticalAlignment="Top" Width="1040" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="{x:Null}">
-            <Grid HorizontalAlignment="Center" Width="1040" Height="670" VerticalAlignment="Bottom">
+        <Grid Grid.Column="1" Grid.Row="1" Height="780" VerticalAlignment="Top" Width="1040" Grid.ColumnSpan="2" Background="{x:Null}" Margin="0,10,0,0">
+            <Grid HorizontalAlignment="Center" Width="1040" Height="756" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="336"/>
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="100"/>
-                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -141,7 +141,8 @@
                             <TextBox Height="37" x:Name="FacultyNameAdd" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Row="2" Grid.ColumnSpan="2">
-                            <Button x:Name="CreateFaculty" Click="CreateFaculty_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
+                            <Button  x:Name="CreateFaculty" Click="CreateFaculty_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
                                     <TextBlock Text="Create" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
@@ -180,6 +181,7 @@
                             <TextBox Height="37" x:Name="SubjectNameAdd" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
                             <Button x:Name="CreateSubject" Click="CreateSubject_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
@@ -189,13 +191,13 @@
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid Grid.Column="0" Grid.Row="3">
-                    <Rectangle Margin="3,5,3,35" Fill="White" RadiusX="10" RadiusY="10">
+                <Grid Grid.Column="0" Grid.Row="4">
+                    <Rectangle Margin="3,5,3,0" Fill="White" RadiusX="10" RadiusY="10">
                         <Rectangle.Effect>
                             <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Height="250">
+                    <Grid Height="200">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="520" />
                             <ColumnDefinition Width="*" />
@@ -209,33 +211,21 @@
                         </Grid.RowDefinitions>
                         <Grid Grid.ColumnSpan="2" Grid.Row="0">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="#FF686E93" Margin="3,5,3,0" Height="18">
-                                <materialDesign:PackIcon Kind="BookAdd" VerticalAlignment="Center" Foreground="White" Margin="0 0 10 0"></materialDesign:PackIcon>
-                                <TextBlock Text="Create new subject" Foreground="White" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                <materialDesign:PackIcon Kind="Score" VerticalAlignment="Center" Foreground="White" Margin="0 0 10 0"></materialDesign:PackIcon>
+                                <TextBlock Text="Create new score" Foreground="White" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Grid>
-                        <Grid Grid.Column="0" Grid.Row="1" Margin="3,1,0,0">
-                            <Border BorderBrush="Gray" BorderThickness="0.5"/>
-                            <TextBlock Text="Name of the subject" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"/>
+                        <Grid Grid.Column="0" Grid.Row="1">
+                            <Border BorderBrush="Gray" BorderThickness="0.5">
+                                <TextBlock Text="Students name" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"></TextBlock>
+                            </Border>
                         </Grid>
-                        <Grid Grid.Row="1" Grid.Column="1" Margin="0 1 0 0">
-                            <TextBox Height="50" x:Name="Subject" Foreground="Gray" Width="514" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
-                        </Grid>
-                        <Grid Grid.Column="0" Grid.Row="2" Margin="3,1,0,0">
-                            <Border BorderBrush="Gray" BorderThickness="0.5"/>
-                            <TextBlock Text="Name of the Student" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"/>
-                        </Grid>
-                        <Grid Grid.Row="2" Grid.Column="1" Margin="0 1 0 0">
-                            <TextBox Height="50" x:Name="Student" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
-                        </Grid>
-                        <Grid Grid.Column="0" Grid.Row="3" Margin="3,1,0,0">
-                            <Border BorderBrush="Gray" BorderThickness="0.5"/>
-                            <TextBlock Text="Name of the Student" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"/>
-                        </Grid>
-                        <Grid Grid.Row="3" Grid.Column="1" Margin="0 1 0 0">
-                            <TextBox Height="50" x:Name="Score" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                        <Grid Grid.Column="1" Grid.Row="1">
+                            <TextBox BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
                         </Grid>
                         <Grid Grid.Row="4" Grid.ColumnSpan="2">
-                            <Button x:Name="Subject11111" Click="CreateSubject_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
+                            <Button x:Name="CreateScore" Click="CreateScore_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
                                     <TextBlock Text="Create" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
