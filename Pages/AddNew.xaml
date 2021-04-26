@@ -53,6 +53,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.ColumnSpan="2" Grid.Row="0">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="#FF686E93" Margin="3,5,3,0" Height="37">
@@ -65,49 +66,58 @@
                             <TextBlock Text="Name of the student" Foreground="Gray" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0" Width="485"></TextBlock>
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="1" Margin="0,1,0,0">
-                            <TextBox Height="41" x:Name="StudentsName" Foreground="Gray" Width="517" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                            <TextBox Height="40" x:Name="StudentsName" Foreground="Gray" Width="517" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Row="2" Grid.Column="0" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5"></Border>
                             <TextBlock Text="Surname of the student" Foreground="Gray" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0" Width="473"></TextBlock>
                         </Grid>
                         <Grid Grid.Row="2" Grid.Column="1" Margin="0,1,0,0">
-                            <TextBox Height="41" x:Name="StudentsSurname" Foreground="Gray" Width="517" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                            <TextBox Height="40" x:Name="StudentsSurname" Foreground="Gray" Width="517" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Row="3" Grid.Column="0" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5"></Border>
                             <TextBlock Text="Date of birth for the student" Foreground="Gray" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,0,0,0" Width="473"></TextBlock>
                         </Grid>
                         <Grid Grid.Row="3" Grid.Column="1" Margin="0,1,0,0">
-                            <TextBox Height="41" x:Name="DateOfBirth" Foreground="Gray" Width="517" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" Text=" dd-mm-yyyy" BorderThickness="0.75"/>
+                            <TextBox Height="40" x:Name="DateOfBirth" Foreground="Gray" Width="517" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" Text=" dd-mm-yyyy" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Column="0" Grid.Row="4" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5"/>
                             <TextBlock Text="Email of the student" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3,0,0,0"/>
                         </Grid>
                         <Grid Grid.Column="1" Grid.Row="4" Margin="0,1,0,0">
-                            <TextBox Height="41" x:Name="Email" Text=" example@email.com" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                            <TextBox Height="40" x:Name="Email" Text=" example@email.com" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Column="0" Grid.Row="5" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5"/>
                             <TextBlock Text="Phone of the student" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3,0,0,0"/>
                         </Grid>
                         <Grid Grid.Column="1" Grid.Row="5" Margin="0,1,0,0">
-                            <TextBox Height="41" x:Name="Phone" Text=" 123456789" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                            <TextBox Height="40" x:Name="Phone" Text=" 123456789" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Column="0" Grid.Row="6" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5"/>
                             <TextBlock Text="Starting year of the student" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3,0,0,0"/>
                         </Grid>
                         <Grid Grid.Column="1" Grid.Row="6" Margin="0,1,0,0">
-                            <TextBox Height="41" x:Name="Year" Text=" " Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                            <TextBox Height="40" x:Name="Year" Text=" " Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
                         <Grid Grid.Column="0" Grid.Row="7" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5"/>
                             <TextBlock Text="Name of the students Faculty" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3,0,0,0"/>
                         </Grid>
                         <Grid Grid.Column="1" Grid.Row="7" Margin="0,1,0,0">
-                            <TextBox Height="41" x:Name="FacultyName" Text=" FEKT" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                            <TextBox Height="40" x:Name="FacultyName" Text=" FEKT" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                        </Grid>
+                        <Grid Grid.ColumnSpan="2" Grid.Row="8">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
+                            <Button  x:Name="CreateStudent" Click="CreateFaculty_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
+                                    <TextBlock Text="Create" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
+                                </StackPanel>
+                            </Button>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -221,7 +231,23 @@
                             </Border>
                         </Grid>
                         <Grid Grid.Column="1" Grid.Row="1">
-                            <TextBox BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
+                            <TextBox x:Name="ScoreStudentName" BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.Row="2">
+                            <Border BorderBrush="Gray" BorderThickness="0.5">
+                                <TextBlock Text="Name of the subject" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"></TextBlock>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="2">
+                            <TextBox x:Name="ScoreSubject" BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
+                        </Grid>
+                        <Grid Grid.Column="0" Grid.Row="3">
+                            <Border BorderBrush="Gray" BorderThickness="0.5">
+                                <TextBlock Text="Students name" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"></TextBlock>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Column="1" Grid.Row="3">
+                            <TextBox x:Name="Score" BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
                         </Grid>
                         <Grid Grid.Row="4" Grid.ColumnSpan="2">
                             <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
