@@ -49,7 +49,15 @@ namespace IS.CRUD
 
         public void studentsFaculty()
         {
-
+            var studentFaculty = (from sf in DbContext.Students
+                                  select new
+                                  {
+                                      StudentId = sf.Id,
+                                      StudentName = sf.Name,
+                                      StudentSurname = sf.Surname,
+                                      FacultyID = sf.Faculty.Id,
+                                      FacultyName = sf.Faculty.FacultyName
+                                  });
         }
     }
 }
