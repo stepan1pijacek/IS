@@ -1,4 +1,5 @@
 ﻿using IS.Data;
+using IS.View;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -20,20 +21,11 @@ namespace IS
 
         public App()
         {
-            ServiceCollection services = new ServiceCollection();
-            services.AddDbContext<ISDbContext>(option =>
-            {
-                option.UseSqlite("Data Source = IDdatabase.db");
-            });
-
-            services.AddSingleton<MainWindow>();
-
-            serviceProvider = services.BuildServiceProvider();
         }
 
         private void OnStartUp(object sender, StartupEventArgs e)
         {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
+            MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
     }

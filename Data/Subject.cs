@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace IS.Data
@@ -11,7 +12,8 @@ namespace IS.Data
             Scores = new HashSet<Score>();
         }
 
-        public decimal Id { get; set; }
+        [Key]
+        public int Id { get; set; }
         public string SubjectName { get; set; }
 
         public virtual ICollection<Score> Scores { get; set; }

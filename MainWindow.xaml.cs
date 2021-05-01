@@ -19,11 +19,9 @@ namespace IS
             isLeft.Text = timeLeft.Days.ToString();
 
             MWviewModel model = new MWviewModel();
-
-            //NoOfStudents.Text = model.getStudents();
-            //NoOfFaculty.Text = model.getFaculties();
+            NoOfStudents.Text = model.getStudents();
+            NoOfFaculty.Text = model.getFaculties();
             //Average.Text = model.getAVG();
-            //GetStudent();
         }
 
         //private void GetStudent()
