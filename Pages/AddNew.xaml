@@ -112,7 +112,7 @@
                         </Grid>
                         <Grid Grid.ColumnSpan="2" Grid.Row="8">
                             <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
-                            <Button  x:Name="CreateStudent" Click="CreateFaculty_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Button  x:Name="CreateStudent" Click="CreateStudent_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
                                     <TextBlock Text="Create" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>

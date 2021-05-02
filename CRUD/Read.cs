@@ -34,6 +34,12 @@ namespace IS.CRUD
             return listOfFaculties;
         }
 
+        public List<Score> scores()
+        {
+            List<Score> listOfScores = new List<Score>();
+            return listOfScores;
+        }
+
         public void studentsScore()
         {
             var studentsScoreList = (from st in DbContext.Scores
