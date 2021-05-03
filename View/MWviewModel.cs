@@ -20,8 +20,8 @@ namespace IS.View
 
         public string getFaculties()
         {
-           int count = DbContext.Faculties.Count();
-           return count.ToString();
+            int count = DbContext.Faculties.Count();
+            return count.ToString();
         }
 
         public string getAVG()

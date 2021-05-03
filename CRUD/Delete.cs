@@ -1,8 +1,6 @@
 ﻿using IS.Data;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace IS.CRUD
 {
@@ -35,7 +33,7 @@ namespace IS.CRUD
             {
                 DbContext.Remove(DbContext.Faculties.SingleOrDefault(x => x.Id.Equals(facultyId)));
                 DbContext.SaveChanges();
-            } 
+            }
             catch (Exception e)
             {
                 throw new Exception(e.Message.ToString());

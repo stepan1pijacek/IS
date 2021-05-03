@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using IS.CRUD;
-using System.Linq;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using IS.CRUD;
 using IS.Data;
+using System;
+using System.Linq;
+using System.Windows;
+using System.Windows.Input;
 
 namespace IS.Pages
 {
@@ -63,7 +55,7 @@ namespace IS.Pages
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void Table_Click(object sender, RoutedEventArgs e)
@@ -115,7 +107,7 @@ namespace IS.Pages
 
                 _Create.NewSubject(createSubject);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString() + "Something went wrong");
             }
@@ -147,7 +139,7 @@ namespace IS.Pages
 
                 _Create.NewScore(createScore);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString() + "Something went wrong!");
             }
@@ -167,8 +159,8 @@ namespace IS.Pages
 
             try
             {
-                var select = _Read.faculties().Where(x => x.FacultyName.ToLower().Equals(faculty)).Select(x => x.Id);
-                facultyId = Convert.ToInt32(select);
+                var select = _Read.faculties().FirstOrDefault(x => x.FacultyName.ToLower() == faculty);
+                facultyId = select.Id;
 
                 var createStudent = new Student
                 {
@@ -182,6 +174,7 @@ namespace IS.Pages
                 };
 
                 _Create.NewStudent(createStudent);
+                
             }
             catch (Exception ex)
             {

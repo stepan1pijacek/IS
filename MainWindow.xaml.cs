@@ -1,9 +1,9 @@
-﻿using System;
-using IS.CRUD;
+﻿using IS.CRUD;
 using IS.Pages;
+using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using System.Linq;
 
 namespace IS
 {
@@ -59,7 +59,7 @@ namespace IS
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)

@@ -1,8 +1,6 @@
 ﻿using IS.Data;
-using IS.CRUD;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace IS.CRUD
@@ -21,15 +19,14 @@ namespace IS.CRUD
             Read read = new Read();
             var result = read.students().Where(x => x.Id.Equals(student.Id));
 
-            if(result == null)
+            if (result == null)
             {
                 throw new Exception("Something went wrong!");
             }
 
             try
             {
-                result = (IEnumerable<Student>)student;
-                DbContext.Update(result);
+                DbContext.Update(student);
                 DbContext.SaveChanges();
                 return true;
             }
@@ -44,15 +41,14 @@ namespace IS.CRUD
             Read read = new Read();
             var result = read.faculties().Where(x => x.Id.Equals(faculty.Id));
 
-            if(result == null)
+            if (result == null)
             {
                 throw new Exception("Something went wrong!");
             }
 
             try
             {
-                result = (IEnumerable<Faculty>)faculty;
-                DbContext.Update(result);
+                DbContext.Update(faculty);
                 DbContext.SaveChanges();
                 return true;
             }
@@ -67,15 +63,14 @@ namespace IS.CRUD
             Read read = new Read();
             var result = read.subjects().Where(x => x.Id.Equals(subject.Id));
 
-            if(result == null)
+            if (result == null)
             {
                 throw new Exception("Something went wrong!");
             }
 
             try
             {
-                result = (IEnumerable<Subject>)subject;
-                DbContext.Update(result);
+                DbContext.Update(subject);
                 DbContext.SaveChanges();
                 return true;
             }

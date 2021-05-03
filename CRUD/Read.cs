@@ -1,9 +1,7 @@
 ﻿using IS.Data;
-using System;
+using IS.Pages;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Windows.Documents;
 
 namespace IS.CRUD
 {
@@ -24,38 +22,43 @@ namespace IS.CRUD
 
         public List<Subject> subjects()
         {
-            List<Subject> listOfSubjects = new List<Subject>();
+            List<Subject> listOfSubjects = DbContext.Subjects.ToList();
             return listOfSubjects;
         }
 
         public List<Faculty> faculties()
         {
-            List<Faculty> listOfFaculties = new List<Faculty>();
+            List<Faculty> listOfFaculties = DbContext.Faculties.ToList();
             return listOfFaculties;
         }
 
         public List<Score> scores()
         {
-            List<Score> listOfScores = new List<Score>();
+            List<Score> listOfScores = DbContext.Scores.ToList();
             return listOfScores;
         }
 
-        public void studentsScore()
+        public List<object> studentsScore()
         {
-            var studentsScoreList = (from st in DbContext.Scores
+            var selectedList = (from st in DbContext.Scores
                                      select new
                                      {
-                                        StudentId = st.Students.Id,
-                                        StudentName = st.Students.Name,
-                                        StudentSurname = st.Students.Surname,
-                                        Subject = st.Subject.SubjectName,
-                                        StudentScore = st.Score1
+                                         StudentId = st.Students.Id,
+                                         StudentName = st.Students.Name,
+                                         StudentSurname = st.Students.Surname,
+                                         FacultyName = st.Students.Faculty.FacultyName,
+                                         Subject = st.Subject.SubjectName,
+                                         StudentScore = st.Score1
                                      }).ToList();
+            //var resultSet = CreateList(selectedList);
+            var finalEntries = new List<object>();
+            finalEntries.AddRange(selectedList);
+            return finalEntries;
         }
 
-        public void studentsFaculty()
+        public List<object> studentsFaculty()
         {
-            var studentFaculty = (from sf in DbContext.Students
+            var selectedList = (from sf in DbContext.Students
                                   select new
                                   {
                                       StudentId = sf.Id,
@@ -64,6 +67,9 @@ namespace IS.CRUD
                                       FacultyID = sf.Faculty.Id,
                                       FacultyName = sf.Faculty.FacultyName
                                   });
+            var finalEntries = new List<object>();
+            finalEntries.AddRange(selectedList);
+            return finalEntries;
         }
     }
 }
