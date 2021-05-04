@@ -17,6 +17,7 @@ namespace IS.Pages
     {
         Read _Read = new Read();
         Delete _Delete = new Delete();
+        Update _Update = new Update();
         public TableView()
         {
             InitializeComponent();
@@ -103,12 +104,29 @@ namespace IS.Pages
 
         private void EditStudent_Click(object sender, RoutedEventArgs e)
         {
-
+            var student = studentsView.SelectedItems.OfType<Student>().ToList();
+            try
+            {
+                var updateStudent = student.Select(x => new Student() { 
+                    Id = x.Id,
+                    Name = x.Name,
+                    Surname = x.Surname,
+                    DateOfBirth = x.DateOfBirth,
+                    Email = x.Email,
+                    Phone = x.Phone,
+                    Year = x.Year,
+                    FacultyId = x.FacultyId
+                });
+                _Update.UpdateStudent((Student)updateStudent);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void DeleteStudent_Click(object sender, RoutedEventArgs e)
         {
-            List<char> selectedItem = new List<char>();
             var student = studentsView.SelectedItems.OfType<Student>().ToList();
             int id = 0;
             try
@@ -128,12 +146,26 @@ namespace IS.Pages
 
         private void EditFaculty_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void DeleteFaculty_Click(object sender, RoutedEventArgs e)
         {
-
+            var faculty = facultyView.SelectedItems.OfType<Faculty>().ToList();
+            int id = 0;
+            try
+            {
+                foreach(var item in faculty)
+                {
+                    id = item.Id;
+                }
+                _Delete.DeleteStudent(id);
+                facultyView.Items.RemoveAt(facultyView.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void EditSubject_Click(object sender, RoutedEventArgs e)
@@ -143,7 +175,20 @@ namespace IS.Pages
 
         private void DeleteSubject_Click(object sender, RoutedEventArgs e)
         {
-
+            var subject = SubjectView.SelectedItems.OfType<Subject>().ToList();
+            int id = 0;
+            try
+            {
+                foreach(var item in subject)
+                {
+                    id = item.Id;
+                }
+                _Delete.DeleteSubject(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void EditScore_Click(object sender, RoutedEventArgs e)
@@ -153,7 +198,20 @@ namespace IS.Pages
 
         private void DeleteScore_Click(object sender, RoutedEventArgs e)
         {
-
+            var score = ScoreView.SelectedItems.OfType<Score>().ToList();
+            int id = 0;
+            try
+            {
+                foreach(var item in score)
+                {
+                    id = item.Id;
+                }
+                _Delete.DeleteScore(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

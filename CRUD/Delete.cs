@@ -40,6 +40,20 @@ namespace IS.CRUD
             }
         }
 
+        public bool DeleteSubject(int subjectID)
+        {
+            try
+            {
+                DbContext.Remove(DbContext.Faculties.SingleOrDefault(x => x.Id.Equals(subjectID)));
+                DbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message.ToString());
+            }
+        }
+
         public void DeleteScoreByStudent(int studentID)
         {
             try
