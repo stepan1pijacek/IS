@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-        xmlns:local="clr-namespace:IS.Pages"
+        xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
         Background="LightGray"
         AllowsTransparency="True" 
@@ -26,11 +26,21 @@
             <Grid Grid.Row="1" Grid.Column="1" Height="1080" VerticalAlignment="Top" Grid.ColumnSpan="2" Background="{x:Null}" Margin="10,10,10,0" Grid.RowSpan="3">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" Foreground="Gray" Background="LightGray" Margin="0,0,0,52">
                     <Grid Height="1060" Width="1765">
-                        <lvc:CartesianChart Name="TimePowerChart" Margin="10, 0, 10, 20"  Hoverable="False" DataTooltip="{x:Null}">
-                            <lvc:CartesianChart.Series>
-                                <lvc:ColumnSeries Values="5,9,8,6,1,5,7,3,6,3"/>
-                            </lvc:CartesianChart.Series>
-                        </lvc:CartesianChart>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="883"/>
+                            <ColumnDefinition Width="883"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="265"/>
+                            <RowDefinition Height="265"/>
+                            <RowDefinition Height="265"/>
+                            <RowDefinition Height="265"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Grid.Column="0">
+                            <Rectangle Fill="White">
+                                
+                            </Rectangle>
+                        </Grid>
                     </Grid>
                 </ScrollViewer>
             </Grid>

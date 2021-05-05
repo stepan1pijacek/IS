@@ -1,5 +1,6 @@
 ﻿using IS.Data;
 using IS.Interfaces;
+using IS.Helper;
 using IS.Pages;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,7 @@ namespace IS.CRUD
                                          StudentSurname = st.Students.Surname,
                                          FacultyName = st.Students.Faculty.FacultyName,
                                          Subject = st.Subject.SubjectName,
-                                         StudentScore = st.Score1
+                                         StudentScore = st.Score1,
                                      }).ToList();
             //var resultSet = CreateList(selectedList);
             var finalEntries = new List<object>();
@@ -68,6 +69,19 @@ namespace IS.CRUD
                                       FacultyID = sf.Faculty.Id,
                                       FacultyName = sf.Faculty.FacultyName
                                   });
+            var finalEntries = new List<object>();
+            finalEntries.AddRange(selectedList);
+            return finalEntries;
+        }
+
+        public List<object> studentsAVGperYear()
+        {
+            var selectedList = (from st in DbContext.Scores.Where(x => x.StudentsId == x.Students.Id)
+                                select new
+                                {
+                                    Year = st.Students.Year,
+                                    Score = st.Score1
+                                }).ToList().GroupBy(x => x.Year);
             var finalEntries = new List<object>();
             finalEntries.AddRange(selectedList);
             return finalEntries;

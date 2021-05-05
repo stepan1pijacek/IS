@@ -1,4 +1,5 @@
 ﻿using IS.Data;
+using IS.Helper;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,5 +14,6 @@ namespace IS.Interfaces
         List<Faculty> faculties();
         List<Subject> subjects();
         List<Student> students();
+        List<object> studentsAVGperYear();
     }
 }

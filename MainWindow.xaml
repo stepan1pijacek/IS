@@ -199,7 +199,7 @@
                     </Grid>
                 </Button>
 
-                <Button x:Name="Statistic" Margin="10" Background="#FF686E93" BorderBrush="DarkBlue" Click="Create_Click">
+                <Button x:Name="Statistic" Margin="10" Background="#FF686E93" BorderBrush="DarkBlue" Click="Statistic_Click">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="About" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="Statistics" FontFamily="Champagne &amp; Limousines"/>

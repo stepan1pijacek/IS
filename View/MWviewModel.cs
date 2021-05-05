@@ -1,4 +1,5 @@
 ﻿using IS.Data;
+using System;
 using System.Linq;
 
 namespace IS.View
@@ -29,6 +30,7 @@ namespace IS.View
             double res;
             var select = DbContext.Scores.Select(o => o.Score1);
             res = (double)select.Average();
+            Math.Round(res, 2);
             return res.ToString();
         }
     }

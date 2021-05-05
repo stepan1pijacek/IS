@@ -22,13 +22,9 @@ namespace IS
             Read read = new Read();
             NoOfStudents.Text = read.students().Count.ToString();
             NoOfFaculty.Text = read.faculties().Count.ToString();
-            Average.Text = read.scores().Average(x => x.Score1).ToString();
+            Average.Text = Math.Round(Convert.ToDecimal(read.scores().Average(x => x.Score1)), 2).ToString();
+            read.studentsAVGperYear();
         }
-
-        //private void GetStudent()
-        //{
-        //    StudentGD.ItemsSource = dbContext.Students.ToList();
-        //}
 
         private void PowerOff_Click(object sender, RoutedEventArgs e)
         {
@@ -73,6 +69,13 @@ namespace IS
         {
             TableView view = new TableView();
             view.Show();
+            this.Close();
+        }
+
+        private void Statistic_Click(object sender, RoutedEventArgs e)
+        {
+            Statistics statistics = new Statistics();
+            statistics.Show();
             this.Close();
         }
     }
