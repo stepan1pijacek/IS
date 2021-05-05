@@ -38,7 +38,7 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" Margin="10" Grid.ColumnSpan="2">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Foreground="Gray" Background="LightGray">
-                            <DataGrid FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" x:Name="studentsView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray" SelectionChanged="studentsView_SelectionChanged" IsReadOnly="False">
+                            <DataGrid GridLinesVisibility="Vertical" FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" x:Name="studentsView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray" SelectionChanged="studentsView_SelectionChanged" IsReadOnly="False">
                                 <DataGrid.Columns>
                                     <materialDesign:DataGridTextColumn Width="160" x:Name="studID" Header="Student ID" Binding="{Binding Id}" IsReadOnly="True"/>
                                     <materialDesign:DataGridTextColumn Width="160" x:Name="studName" Header="Student name" Binding="{Binding Name}" />
@@ -54,7 +54,7 @@
                                                 <Button Width="160" x:Name="EditStudent" Click="EditStudent_Click" BorderBrush="Black" BorderThickness="0.25" Background="Gray">
                                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                                         <materialDesign:PackIcon Kind="Edit" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
-                                                        <TextBlock Text="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
+                                                        <TextBlock Text="Edit" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
                                             </DataTemplate>
@@ -66,7 +66,7 @@
                                                 <Button Width="160" x:Name="DeleteStudent" Click="DeleteStudent_Click" BorderBrush="Black" BorderThickness="0.25" Background="Red">
                                                     <StackPanel Orientation="Horizontal">
                                                         <materialDesign:PackIcon Kind="Dangerous" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
-                                                        <TextBlock Text="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
+                                                        <TextBlock Text="Delete" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
                                             </DataTemplate>
@@ -78,17 +78,17 @@
                     </Grid>
                     <Grid Grid.Row="1" Margin="10" Grid.Column="0">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Foreground="Gray" Background="LightGray">
-                            <DataGrid FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="facultyView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray">
+                            <DataGrid GridLinesVisibility="Vertical" FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="facultyView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray">
                                 <DataGrid.Columns>
                                     <materialDesign:DataGridTextColumn Width="195" Header="Faculty ID" Binding="{Binding Id}" IsReadOnly="True"/>
                                     <materialDesign:DataGridTextColumn Width="195" Header="Faculty name" Binding="{Binding FacultyName}"/>
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Width="195" x:Name="EditFaculty" Click="EditFaculty_Click" BorderBrush="Black" BorderThickness="0.25" Background="Gray">
+                                                <Button Width="160" x:Name="EditFaculty" Click="EditFaculty_Click" BorderBrush="Black" BorderThickness="0.25" Background="Gray">
                                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                                         <materialDesign:PackIcon Kind="Edit" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
-                                                        <TextBlock Text="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
+                                                        <TextBlock Text="Edit" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
                                             </DataTemplate>
@@ -97,10 +97,10 @@
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Width="195" x:Name="DeleteFaculty" Click="DeleteFaculty_Click" BorderBrush="Black" BorderThickness="0.25" Background="Red">
+                                                <Button Width="160" x:Name="DeleteFaculty" Click="DeleteFaculty_Click" BorderBrush="Black" BorderThickness="0.25" Background="Red">
                                                     <StackPanel Orientation="Horizontal">
                                                         <materialDesign:PackIcon Kind="Dangerous" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
-                                                        <TextBlock Text="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
+                                                        <TextBlock Text="Delete" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
                                             </DataTemplate>
@@ -112,17 +112,17 @@
                     </Grid>
                     <Grid Grid.Row="1" Margin="10" Grid.Column="1">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Foreground="Gray" Background="LightGray">
-                            <DataGrid FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="SubjectView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray">
+                            <DataGrid GridLinesVisibility="Vertical" FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="SubjectView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray">
                                 <DataGrid.Columns>
                                     <materialDesign:DataGridTextColumn Width="195" Header="Subject ID" Binding="{Binding Id}" IsReadOnly="True"/>
                                     <materialDesign:DataGridTextColumn Width="195" Header="Subject name" Binding="{Binding SubjectName}"/>
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Width="195" x:Name="EditSubject" Click="EditSubject_Click" BorderBrush="Black" BorderThickness="0.25" Background="Gray">
+                                                <Button Width="160" x:Name="EditSubject" Click="EditSubject_Click" BorderBrush="Black" BorderThickness="0.25" Background="Gray">
                                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                                         <materialDesign:PackIcon Kind="Edit" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
-                                                        <TextBlock Text="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
+                                                        <TextBlock Text="Edit" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
                                             </DataTemplate>
@@ -131,9 +131,9 @@
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Width="195" x:Name="DeleteSubject" Click="DeleteSubject_Click" BorderBrush="Black" BorderThickness="0.25" Background="Red">
+                                                <Button Width="160" x:Name="DeleteSubject" Click="DeleteSubject_Click" BorderBrush="Black" BorderThickness="0.25" Background="Red">
                                                     <StackPanel Orientation="Horizontal">
-                                                        <materialDesign:PackIcon Kind="Dangerous" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
+                                                        <materialDesign:PackIcon Kind="Dangerous" HorizontalAlignment="Right" VerticalAlignment="Center"></materialDesign:PackIcon>
                                                         <TextBlock Text="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
@@ -146,7 +146,7 @@
                     </Grid>
                     <Grid Grid.Row="2" Margin="10" Grid.ColumnSpan="2">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Foreground="Gray" Background="LightGray">
-                            <DataGrid FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="ScoreView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray">
+                            <DataGrid GridLinesVisibility="Vertical" FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="ScoreView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray">
                                 <DataGrid.Columns>
                                     <materialDesign:DataGridTextColumn Width="225" Header="Score ID" Binding="{Binding Id}" IsReadOnly="True"/>
                                     <materialDesign:DataGridTextColumn Width="225" Header="Students ID" Binding="{Binding StudentsId}"/>
@@ -155,9 +155,9 @@
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Width="225" x:Name="EditScore" Click="EditScore_Click" BorderBrush="Black" BorderThickness="0.25" Background="Gray">
+                                                <Button Width="160" x:Name="EditScore" Click="EditScore_Click" BorderBrush="Black" BorderThickness="0.25" Background="Gray">
                                                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                                        <materialDesign:PackIcon Kind="Edit" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
+                                                        <materialDesign:PackIcon Kind="Edit" HorizontalAlignment="Right" VerticalAlignment="Center"></materialDesign:PackIcon>
                                                         <TextBlock Text="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
@@ -167,9 +167,9 @@
                                     <DataGridTemplateColumn>
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Width="225" x:Name="DeleteScore" Click="DeleteScore_Click" BorderBrush="Black" BorderThickness="0.25" Background="Red">
+                                                <Button Width="160" x:Name="DeleteScore" Click="DeleteScore_Click" BorderBrush="Black" BorderThickness="0.25" Background="Red">
                                                     <StackPanel Orientation="Horizontal">
-                                                        <materialDesign:PackIcon Kind="Dangerous" HorizontalAlignment="Left" VerticalAlignment="Center"></materialDesign:PackIcon>
+                                                        <materialDesign:PackIcon Kind="Dangerous" HorizontalAlignment="Right" VerticalAlignment="Center"></materialDesign:PackIcon>
                                                         <TextBlock Text="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines"/>
                                                     </StackPanel>
                                                 </Button>
@@ -182,11 +182,11 @@
                     </Grid>
                     <Grid Grid.Row="3" Margin="10" Grid.ColumnSpan="2">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Foreground="Gray" Background="LightGray">
-                            <DataGrid FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="StudentScoreView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray" IsReadOnly="True">
+                            <DataGrid GridLinesVisibility="Vertical" FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="StudentScoreView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <materialDesign:DataGridTextColumn Width="230" Header="Student ID" Binding="{Binding StudentId}" />
                                     <materialDesign:DataGridTextColumn Width="230" Header="Students name" Binding="{Binding StudentName}" />
-                                    <materialDesign:DataGridTextColumn Width="230" Header="Students surname" Binding="{Binding StudentsSurname}" />
+                                    <materialDesign:DataGridTextColumn Width="230" Header="Students surname" Binding="{Binding StudentSurname}" />
                                     <materialDesign:DataGridTextColumn Width="230" Header="Faculty name" Binding="{Binding FacultyName}"/>
                                     <materialDesign:DataGridTextColumn Width="230" Header="Subject" Binding="{Binding Subject}" />
                                     <materialDesign:DataGridTextColumn Width="230" Header="Score " Binding="{Binding StudentScore}" />
@@ -196,11 +196,11 @@
                     </Grid>
                     <Grid Grid.Row="4" Margin="10" Grid.ColumnSpan="2">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Foreground="Gray" Background="LightGray">
-                            <DataGrid FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="StudentFacultyView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray" IsReadOnly="True">
+                            <DataGrid GridLinesVisibility="Vertical" FontFamily="Champagne &amp; Limousines" AutoGenerateColumns="False" Name="StudentFacultyView" CanUserResizeRows="True" CanUserSortColumns="True" AlternatingRowBackground="LightGray" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <materialDesign:DataGridTextColumn Width="330" Header="Student ID" Binding="{Binding StudentId}" />
                                     <materialDesign:DataGridTextColumn Width="330" Header="Students name" Binding="{Binding StudentName}" />
-                                    <materialDesign:DataGridTextColumn Width="330" Header="Students surname" Binding="{Binding StudentsSurname}" />
+                                    <materialDesign:DataGridTextColumn Width="330" Header="Students surname" Binding="{Binding StudentSurname}" />
                                     <materialDesign:DataGridTextColumn Width="330" Header="Faculty ID" Binding="{Binding FacultyID}"/>
                                     <materialDesign:DataGridTextColumn Width="330" Header="Faculty name" Binding="{Binding FacultyName}" />
                                 </DataGrid.Columns>
@@ -277,6 +277,9 @@
         <Grid x:Name="TitleBar" Grid.ColumnSpan="3" Background="#FF686E93" MouseDown="TitleBar_MouseDown">
             <TextBlock HorizontalAlignment="Left" Text="IS - Create" VerticalAlignment="Center" FontFamily="Impact" Margin="10 5" FontSize="15" Foreground="White"></TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Background="{x:Null}" Margin="5">
+                <Button x:Name="Refresh" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Width="25" Height="25" Click="Refresh_Click">
+                    <materialDesign:PackIcon Kind="Refresh"/>
+                </Button>
                 <Button x:Name="Home" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Width="25" Height="25" Click="Home_Click">
                     <materialDesign:PackIcon Kind="Home"/>
                 </Button>

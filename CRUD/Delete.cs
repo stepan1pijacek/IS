@@ -1,11 +1,13 @@
 ﻿using IS.Data;
+using IS.Interfaces;
 using System;
 using System.Linq;
 
 namespace IS.CRUD
 {
-    public class Delete
+    public class Delete : IDelete
     {
+        Read _Read = new Read();
         ISDbContext DbContext;
 
         public Delete()
@@ -14,12 +16,14 @@ namespace IS.CRUD
             DbContext = _db;
         }
 
-        public void DeleteStudent(int studentID)
+        public bool DeleteStudent(int studentID)
         {
             try
             {
-                DbContext.Remove(DbContext.Students.SingleOrDefault(x => x.Id.Equals(studentID)));
+                var select = DbContext.Students.FirstOrDefault(x => x.Id.Equals(studentID));
+                DbContext.Remove(select);
                 DbContext.SaveChanges();
+                return true;
             }
             catch (Exception e)
             {
@@ -27,12 +31,13 @@ namespace IS.CRUD
             }
         }
 
-        public void DeleteFaculty(int facultyId)
+        public bool DeleteFaculty(int facultyId)
         {
             try
             {
-                DbContext.Remove(DbContext.Faculties.SingleOrDefault(x => x.Id.Equals(facultyId)));
+                DbContext.Remove(DbContext.Faculties.FirstOrDefault(x => x.Id.Equals(facultyId)));
                 DbContext.SaveChanges();
+                return true;
             }
             catch (Exception e)
             {
@@ -44,7 +49,7 @@ namespace IS.CRUD
         {
             try
             {
-                DbContext.Remove(DbContext.Faculties.SingleOrDefault(x => x.Id.Equals(subjectID)));
+                DbContext.Remove(DbContext.Subjects.FirstOrDefault(x => x.Id.Equals(subjectID)));
                 DbContext.SaveChanges();
                 return true;
             }
@@ -54,12 +59,13 @@ namespace IS.CRUD
             }
         }
 
-        public void DeleteScoreByStudent(int studentID)
+        public bool DeleteScoreByStudent(int studentID)
         {
             try
             {
-                DbContext.Remove(DbContext.Scores.SingleOrDefault(x => x.StudentsId.Equals(studentID)));
+                DbContext.Remove(DbContext.Scores.FirstOrDefault(x => x.StudentsId.Equals(studentID)));
                 DbContext.SaveChanges();
+                return true;
             }
             catch (Exception e)
             {
@@ -67,12 +73,13 @@ namespace IS.CRUD
             }
         }
 
-        public void DeleteScore(int scoreID)
+        public bool DeleteScore(int scoreID)
         {
             try
             {
-                DbContext.Remove(DbContext.Scores.SingleOrDefault(x => x.Id.Equals(scoreID)));
+                DbContext.Remove(DbContext.Scores.FirstOrDefault(x => x.Id.Equals(scoreID)));
                 DbContext.SaveChanges();
+                return true;
             }
             catch (Exception e)
             {

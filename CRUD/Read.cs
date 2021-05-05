@@ -1,11 +1,12 @@
 ﻿using IS.Data;
+using IS.Interfaces;
 using IS.Pages;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace IS.CRUD
 {
-    public class Read
+    public class Read : IRead
     {
         ISDbContext DbContext;
         public Read()

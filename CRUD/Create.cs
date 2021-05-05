@@ -1,8 +1,9 @@
 ﻿using IS.Data;
+using IS.Interfaces;
 
 namespace IS.CRUD
 {
-    public class Create
+    public class Create : ICreate
     {
         ISDbContext DbContext;
         public Create()

@@ -110,8 +110,8 @@
                         <Grid Grid.Column="1" Grid.Row="7" Margin="0,1,0,0">
                             <TextBox Height="36" x:Name="FacultyName" Text=" FEKT" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
-                        <Grid Grid.ColumnSpan="2" Grid.Row="8">
-                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
+                        <Grid Grid.ColumnSpan="2" Grid.Row="8" Margin="3,1,0,0">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="0,0,3,0"></Border>
                             <Button  x:Name="CreateStudent" Click="CreateStudent_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
@@ -148,10 +148,10 @@
                             <TextBlock Text="Name of the faculty" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"/>
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="1" Margin="0 1 0 0">
-                            <TextBox Height="37" x:Name="FacultyNameAdd" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
+                            <TextBox Height="37" x:Name="FacultyNameAdd" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.70"/>
                         </Grid>
-                        <Grid Grid.Row="2" Grid.ColumnSpan="2">
-                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
+                        <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="3,1,0,0">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="0,0,3,0"></Border>
                             <Button  x:Name="CreateFaculty" Click="CreateFaculty_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
@@ -190,8 +190,8 @@
                         <Grid Grid.Row="1" Grid.Column="1" Margin="0 1 0 0">
                             <TextBox Height="37" x:Name="SubjectNameAdd" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="0.75"/>
                         </Grid>
-                        <Grid Grid.Row="2" Grid.ColumnSpan="2">
-                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
+                        <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="3,1,0,0">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="0,0,3,0"/>
                             <Button x:Name="CreateSubject" Click="CreateSubject_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>
@@ -225,32 +225,32 @@
                                 <TextBlock Text="Create new score" Foreground="White" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Grid>
-                        <Grid Grid.Column="0" Grid.Row="1">
+                        <Grid Grid.Column="0" Grid.Row="1" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5">
                                 <TextBlock Text="Students name" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"></TextBlock>
                             </Border>
                         </Grid>
-                        <Grid Grid.Column="1" Grid.Row="1">
+                        <Grid Grid.Column="1" Grid.Row="1" Margin="0 1 0 0">
                             <TextBox x:Name="ScoreStudentName" BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
                         </Grid>
-                        <Grid Grid.Column="0" Grid.Row="2">
+                        <Grid Grid.Column="0" Grid.Row="2" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5">
                                 <TextBlock Text="Name of the subject" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"></TextBlock>
                             </Border>
                         </Grid>
-                        <Grid Grid.Column="1" Grid.Row="2">
+                        <Grid Grid.Column="1" Grid.Row="2" Margin="0 1 0 0">
                             <TextBox x:Name="ScoreSubject" BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
                         </Grid>
-                        <Grid Grid.Column="0" Grid.Row="3">
+                        <Grid Grid.Column="0" Grid.Row="3" Margin="3,1,0,0">
                             <Border BorderBrush="Gray" BorderThickness="0.5">
-                                <TextBlock Text="Students name" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"></TextBlock>
+                                <TextBlock Text="Students score" Foreground="Gray" Width="473" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Champagne &amp; Limousines" Margin="3 0 0 0"></TextBlock>
                             </Border>
                         </Grid>
-                        <Grid Grid.Column="1" Grid.Row="3">
+                        <Grid Grid.Column="1" Grid.Row="3" Margin="0 1 0 0">
                             <TextBox x:Name="Score" BorderBrush="Gray" BorderThickness="0.75" Foreground="Gray" Width="517" FontFamily="Champagne &amp; Limousines" HorizontalAlignment="Left" VerticalAlignment="Center" Height="38.5"></TextBox>
                         </Grid>
-                        <Grid Grid.Row="4" Grid.ColumnSpan="2">
-                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="3,0,3,0"></Border>
+                        <Grid Grid.Row="4" Grid.ColumnSpan="2" Margin="3,1,0,0">
+                            <Border Background="White" BorderBrush="Gray" BorderThickness="0.5" Margin="0,0,3,0"></Border>
                             <Button x:Name="CreateScore" Click="CreateScore_Click" BorderBrush="Black" BorderThickness="0.70" Width="120" Height="23" Background="Gray" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <materialDesign:PackIcon Kind="Create" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 2 0"></materialDesign:PackIcon>

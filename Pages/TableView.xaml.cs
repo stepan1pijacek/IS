@@ -1,6 +1,7 @@
 ﻿using IS.CRUD;
 using IS.Data;
 using Newtonsoft.Json;
+using Notifications.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace IS.Pages
         Read _Read = new Read();
         Delete _Delete = new Delete();
         Update _Update = new Update();
+        NotificationManager notificationManager = new NotificationManager();
         public TableView()
         {
             InitializeComponent();
@@ -107,21 +109,37 @@ namespace IS.Pages
             var student = studentsView.SelectedItems.OfType<Student>().ToList();
             try
             {
-                var updateStudent = student.Select(x => new Student() { 
-                    Id = x.Id,
-                    Name = x.Name,
-                    Surname = x.Surname,
-                    DateOfBirth = x.DateOfBirth,
-                    Email = x.Email,
-                    Phone = x.Phone,
-                    Year = x.Year,
-                    FacultyId = x.FacultyId
+                Student updateStudent = new Student();
+
+                foreach(var x in student)
+                {
+                    updateStudent.Id = x.Id;
+                    updateStudent.Name = x.Name;
+                    updateStudent.Surname = x.Surname;
+                    updateStudent.DateOfBirth = x.DateOfBirth;
+                    updateStudent.Email = x.Email;
+                    updateStudent.Phone = x.Phone;
+                    updateStudent.Year = x.Year;
+                    updateStudent.FacultyId = x.FacultyId;
+                }
+
+                _Update.UpdateStudent(updateStudent);
+                studentsView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Student has been updated succesfully!",
+                    Type = NotificationType.Information
                 });
-                _Update.UpdateStudent((Student)updateStudent);
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
         }
 
@@ -136,17 +154,56 @@ namespace IS.Pages
                     id = item.Id;
                 }
                 _Delete.DeleteStudent(id);
-                studentsView.Items.RemoveAt(studentsView.SelectedIndex);
+                studentsView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Student has been deleted succesfully!",
+                    Type = NotificationType.Warning
+                });
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
         }
 
         private void EditFaculty_Click(object sender, RoutedEventArgs e)
         {
-           
+            var faculty = facultyView.SelectedItems.OfType<Faculty>().ToList();
+            try
+            {
+                Faculty updateFaculty = new Faculty();
+
+                foreach(var x in faculty)
+                {
+                    updateFaculty.Id = x.Id;
+                    updateFaculty.FacultyName = x.FacultyName;
+                }
+
+                _Update.UpdateFaculty(updateFaculty);
+                facultyView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Faculty has been updated succesfully!",
+                    Type = NotificationType.Information
+                });
+            }
+            catch
+            {
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
+            }
         }
 
         private void DeleteFaculty_Click(object sender, RoutedEventArgs e)
@@ -159,18 +216,57 @@ namespace IS.Pages
                 {
                     id = item.Id;
                 }
-                _Delete.DeleteStudent(id);
-                facultyView.Items.RemoveAt(facultyView.SelectedIndex);
+                _Delete.DeleteFaculty(id);
+                facultyView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Faculty has been deleted succesfully!",
+                    Type = NotificationType.Warning
+                });
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
         }
 
         private void EditSubject_Click(object sender, RoutedEventArgs e)
         {
+            var subject = SubjectView.SelectedItems.OfType<Subject>().ToList();
+            try
+            {
+                Subject updateSubject = new Subject();
 
+                foreach(var x in subject)
+                {
+                    updateSubject.Id = x.Id;
+                    updateSubject.SubjectName = x.SubjectName;
+                }
+
+                _Update.UpdateSubject(updateSubject);
+                SubjectView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Subject has been updated succesfully!",
+                    Type = NotificationType.Information
+                });
+            }
+            catch
+            {
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
+            }
         }
 
         private void DeleteSubject_Click(object sender, RoutedEventArgs e)
@@ -184,16 +280,58 @@ namespace IS.Pages
                     id = item.Id;
                 }
                 _Delete.DeleteSubject(id);
+                SubjectView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Subject has been deleted succesfully!",
+                    Type = NotificationType.Warning
+                });
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
         }
 
         private void EditScore_Click(object sender, RoutedEventArgs e)
         {
+            var score = ScoreView.SelectedItems.OfType<Score>().ToList();
+            try
+            {
+                Score updateScore = new Score();
 
+                foreach(var x in score)
+                {
+                    updateScore.Id = x.Id;
+                    updateScore.StudentsId = x.StudentsId;
+                    updateScore.SubjectId = x.SubjectId;
+                    updateScore.Score1 = x.Score1;
+                }
+
+                _Update.UpdateScore(updateScore);
+                ScoreView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Score has been updated succesfully!",
+                    Type = NotificationType.Information
+                });
+            }
+            catch
+            {
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
+            }
         }
 
         private void DeleteScore_Click(object sender, RoutedEventArgs e)
@@ -207,11 +345,34 @@ namespace IS.Pages
                     id = item.Id;
                 }
                 _Delete.DeleteScore(id);
+                ScoreView.Items.Refresh();
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Score has been deleted succesfully!",
+                    Type = NotificationType.Warning
+                });
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message.ToString());
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            SubjectView.Items.Refresh();
+            ScoreView.Items.Refresh();
+            StudentFacultyView.Items.Refresh();
+            StudentScoreView.Items.Refresh();
+            studentsView.Items.Refresh();
+            facultyView.Items.Refresh();
+            SubjectView.Items.Refresh();
         }
     }
 }

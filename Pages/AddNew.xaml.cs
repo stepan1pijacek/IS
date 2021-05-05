@@ -1,5 +1,6 @@
 ﻿using IS.CRUD;
 using IS.Data;
+using Notifications.Wpf;
 using System;
 using System.Linq;
 using System.Windows;
@@ -79,6 +80,8 @@ namespace IS.Pages
         {
             string faculty = FacultyNameAdd.Text;
 
+            var notificationManager = new NotificationManager();
+
             try
             {
                 var createFaculty = new Faculty
@@ -87,16 +90,29 @@ namespace IS.Pages
                 };
 
                 _Create.NewFaculty(createFaculty);
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Subject has been created succesfully!",
+                    Type = NotificationType.Success
+                });
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString() + "Something went wrong");
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
         }
 
         private void CreateSubject_Click(object sender, RoutedEventArgs e)
         {
             string subject = SubjectNameAdd.Text;
+
+            var notificationManager = new NotificationManager();
 
             try
             {
@@ -106,10 +122,21 @@ namespace IS.Pages
                 };
 
                 _Create.NewSubject(createSubject);
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Subject has been created succesfully!",
+                    Type = NotificationType.Success
+                });
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString() + "Something went wrong");
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
         }
 
@@ -121,14 +148,14 @@ namespace IS.Pages
             int studentId = 0;
             int subjectId = 0;
 
-
+            var notificationManager = new NotificationManager();
             try
             {
-                var selectStudent = _Read.students().Where(x => x.Name.ToLower().Equals(studentName)).Select(x => x.Id);
-                studentId = Convert.ToInt32(selectStudent);
+                var selectStudent = _Read.students().FirstOrDefault(x => x.Name.ToLower().Trim() == studentName);
+                studentId = Convert.ToInt32(selectStudent.Id);
 
-                var selectSubject = _Read.subjects().Where(x => x.SubjectName.ToLower().Equals(subjectName)).Select(x => x.Id);
-                subjectId = Convert.ToInt32(selectSubject);
+                var selectSubject = _Read.subjects().FirstOrDefault(x => x.SubjectName.ToLower().Trim() == subjectName);
+                subjectId = Convert.ToInt32(selectSubject.Id);
 
                 var createScore = new Score
                 {
@@ -138,10 +165,21 @@ namespace IS.Pages
                 };
 
                 _Create.NewScore(createScore);
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Score has been created succesfully!",
+                    Type = NotificationType.Success
+                });
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString() + "Something went wrong!");
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
 
         }
@@ -157,6 +195,7 @@ namespace IS.Pages
             string faculty = FacultyName.Text.ToLower().Trim();
             int facultyId = 0;
 
+            var notificationManager = new NotificationManager();
             try
             {
                 var select = _Read.faculties().FirstOrDefault(x => x.FacultyName.ToLower() == faculty);
@@ -174,11 +213,22 @@ namespace IS.Pages
                 };
 
                 _Create.NewStudent(createStudent);
-                
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation completed",
+                    Message = "Student has been created succesfully!",
+                    Type = NotificationType.Success
+                });
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString() + "Something went wrong!");
+                notificationManager.Show(new NotificationContent
+                {
+                    Title = "Operation error",
+                    Message = "Something went wrong!",
+                    Type = NotificationType.Error
+                });
             }
         }
     }
