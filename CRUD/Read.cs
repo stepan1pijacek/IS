@@ -4,6 +4,7 @@ using IS.Helper;
 using IS.Pages;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace IS.CRUD
 {
@@ -74,16 +75,30 @@ namespace IS.CRUD
             return finalEntries;
         }
 
-        public List<object> studentsAVGperYear()
+        public List<HelperGraphClass> studentsAVGperYear()
         {
-            var selectedList = (from st in DbContext.Scores.Where(x => x.StudentsId == x.Students.Id)
-                                select new
-                                {
-                                    Year = st.Students.Year,
-                                    Score = st.Score1
-                                }).ToList().GroupBy(x => x.Year);
-            var finalEntries = new List<object>();
-            finalEntries.AddRange(selectedList);
+            //var selectedList = DbContext.Database.ExecuteSqlRaw("SELECT " +
+            //    "Year, " +
+            //    "AVG(Score1) " +
+            //    "FROM Students " +
+            //    "JOIN Scores on Scores.StudentsId = Students.Id " +
+            //    "GROUP BY Year");
+            var select = (from st in DbContext.Scores join sc in DbContext.Students
+                          on st.StudentsId equals sc.Id
+                          group st by sc.Year into grp
+                          select new
+                          {
+                              Year = grp.Key,
+                              Score = grp.Average(x => x.Score1)
+                          }
+                          ).ToList();
+            var finalEntries = new List<HelperGraphClass>();
+
+            finalEntries = select.Select(x => new HelperGraphClass
+            {
+                Year = x.Year,
+                Score = (int)x.Score
+            }).ToList();
             return finalEntries;
         }
     }

@@ -14,6 +14,6 @@ namespace IS.Interfaces
         List<Faculty> faculties();
         List<Subject> subjects();
         List<Student> students();
-        List<object> studentsAVGperYear();
+        List<HelperGraphClass> studentsAVGperYear();
     }
 }

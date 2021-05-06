@@ -2,8 +2,10 @@
 using IS.CRUD;
 using IS.Helper;
 using LiveCharts;
+using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,18 +24,21 @@ namespace IS.Pages
     /// </summary>
     public partial class Statistics : Window
     {
+        public ChartValues<int> Average { get; set; }
+        public string[] Years { get; set; }
         Read _Read = new Read();
 
         public Statistics()
         {
             InitializeComponent();
-            DispatcherTimer plotTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            plotTimer.Tick += PlotNow;
-            plotTimer.Start();
+            getData();
         }
-        
-        public void PlotNow(object sender, EventArgs e)
+
+        public void getData()
         {
+            IEnumerable<HelperGraphClass> resultSet = _Read.studentsAVGperYear();
+            Average = new ChartValues<int>(resultSet.Select(x => x.Score));
+            Years = resultSet.Select(x => x.Year.ToString()).ToArray();
         }
 
         private void TitleBar_MouseDown(object sender, MouseButtonEventArgs e)
