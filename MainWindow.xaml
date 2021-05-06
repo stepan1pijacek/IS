@@ -118,7 +118,7 @@
                             <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="25" Height="200">
+                    <Grid Margin="25,17,25,10">
                         <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FF686E93">
                             <materialDesign:PackIcon Kind="Clock" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
                         </Grid>
@@ -133,7 +133,7 @@
                             <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="25" Height="200">
+                    <Grid Margin="25,17,25,10">
                         <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FF686E93">
                             <materialDesign:PackIcon Kind="Calendar" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
                         </Grid>
@@ -148,7 +148,7 @@
                             <DropShadowEffect BlurRadius="10" Color="Gray" RenderingBias="Quality" Opacity="0.5"/>
                         </Rectangle.Effect>
                     </Rectangle>
-                    <Grid Margin="25" Height="200">
+                    <Grid Margin="25,17,25,10">
                         <Grid Width="30" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 0" Background="#FF686E93">
                             <materialDesign:PackIcon Kind="CalendarAlert" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Bottom" Width="25" Height="25" Foreground="White"/>
                         </Grid>

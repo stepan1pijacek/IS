@@ -75,15 +75,10 @@ namespace IS.CRUD
 
         public List<HelperGraphClass> studentsAVGperYear()
         {
-            //var selectedList = DbContext.Database.ExecuteSqlRaw("SELECT " +
-            //    "Year, " +
-            //    "AVG(Score1) " +
-            //    "FROM Students " +
-            //    "JOIN Scores on Scores.StudentsId = Students.Id " +
-            //    "GROUP BY Year");
+
             var select = (from st in DbContext.Scores
                           join sc in DbContext.Students
-on st.StudentsId equals sc.Id
+                          on st.StudentsId equals sc.Id
                           group st by sc.Year into grp
                           select new
                           {

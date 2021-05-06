@@ -73,7 +73,9 @@ namespace IS.Pages
 
         private void Statistic_Click(object sender, RoutedEventArgs e)
         {
-
+            Statistics statistics = new Statistics();
+            statistics.Show();
+            this.Close();
         }
 
         private void CreateFaculty_Click(object sender, RoutedEventArgs e)

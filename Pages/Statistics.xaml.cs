@@ -21,7 +21,7 @@ namespace IS.Pages
         public Statistics()
         {
             InitializeComponent();
-            getData();
+            //getData();
         }
 
         public void getData()

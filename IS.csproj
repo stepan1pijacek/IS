@@ -21,10 +21,4 @@
     <PackageReference Include="Notifications.Wpf" Version="0.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Delete\" />
-    <Folder Include="Pages\Update\" />
-    <Folder Include="Pages\Read\" />
-  </ItemGroup>
-
 </Project>

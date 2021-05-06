@@ -23,7 +23,6 @@ namespace IS
             NoOfStudents.Text = read.students().Count.ToString();
             NoOfFaculty.Text = read.faculties().Count.ToString();
             Average.Text = Math.Round(Convert.ToDecimal(read.scores().Average(x => x.Score1)), 2).ToString();
-            read.studentsAVGperYear();
         }
 
         private void PowerOff_Click(object sender, RoutedEventArgs e)
