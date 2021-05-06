@@ -1,10 +1,8 @@
 ﻿using IS.Data;
-using IS.Interfaces;
 using IS.Helper;
-using IS.Pages;
+using IS.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace IS.CRUD
 {
@@ -44,15 +42,15 @@ namespace IS.CRUD
         public List<object> studentsScore()
         {
             var selectedList = (from st in DbContext.Scores
-                                     select new
-                                     {
-                                         StudentId = st.Students.Id,
-                                         StudentName = st.Students.Name,
-                                         StudentSurname = st.Students.Surname,
-                                         FacultyName = st.Students.Faculty.FacultyName,
-                                         Subject = st.Subject.SubjectName,
-                                         StudentScore = st.Score1,
-                                     }).ToList();
+                                select new
+                                {
+                                    StudentId = st.Students.Id,
+                                    StudentName = st.Students.Name,
+                                    StudentSurname = st.Students.Surname,
+                                    FacultyName = st.Students.Faculty.FacultyName,
+                                    Subject = st.Subject.SubjectName,
+                                    StudentScore = st.Score1,
+                                }).ToList();
             //var resultSet = CreateList(selectedList);
             var finalEntries = new List<object>();
             finalEntries.AddRange(selectedList);
@@ -62,14 +60,14 @@ namespace IS.CRUD
         public List<object> studentsFaculty()
         {
             var selectedList = (from sf in DbContext.Students
-                                  select new
-                                  {
-                                      StudentId = sf.Id,
-                                      StudentName = sf.Name,
-                                      StudentSurname = sf.Surname,
-                                      FacultyID = sf.Faculty.Id,
-                                      FacultyName = sf.Faculty.FacultyName
-                                  });
+                                select new
+                                {
+                                    StudentId = sf.Id,
+                                    StudentName = sf.Name,
+                                    StudentSurname = sf.Surname,
+                                    FacultyID = sf.Faculty.Id,
+                                    FacultyName = sf.Faculty.FacultyName
+                                });
             var finalEntries = new List<object>();
             finalEntries.AddRange(selectedList);
             return finalEntries;
@@ -83,8 +81,9 @@ namespace IS.CRUD
             //    "FROM Students " +
             //    "JOIN Scores on Scores.StudentsId = Students.Id " +
             //    "GROUP BY Year");
-            var select = (from st in DbContext.Scores join sc in DbContext.Students
-                          on st.StudentsId equals sc.Id
+            var select = (from st in DbContext.Scores
+                          join sc in DbContext.Students
+on st.StudentsId equals sc.Id
                           group st by sc.Year into grp
                           select new
                           {

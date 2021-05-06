@@ -1,9 +1,7 @@
 ﻿using IS.CRUD;
 using IS.Data;
-using Newtonsoft.Json;
 using Notifications.Wpf;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -111,7 +109,7 @@ namespace IS.Pages
             {
                 Student updateStudent = new Student();
 
-                foreach(var x in student)
+                foreach (var x in student)
                 {
                     updateStudent.Id = x.Id;
                     updateStudent.Name = x.Name;
@@ -149,7 +147,7 @@ namespace IS.Pages
             int id = 0;
             try
             {
-                foreach(var item in student)
+                foreach (var item in student)
                 {
                     id = item.Id;
                 }
@@ -180,7 +178,7 @@ namespace IS.Pages
             {
                 Faculty updateFaculty = new Faculty();
 
-                foreach(var x in faculty)
+                foreach (var x in faculty)
                 {
                     updateFaculty.Id = x.Id;
                     updateFaculty.FacultyName = x.FacultyName;
@@ -212,7 +210,7 @@ namespace IS.Pages
             int id = 0;
             try
             {
-                foreach(var item in faculty)
+                foreach (var item in faculty)
                 {
                     id = item.Id;
                 }
@@ -243,7 +241,7 @@ namespace IS.Pages
             {
                 Subject updateSubject = new Subject();
 
-                foreach(var x in subject)
+                foreach (var x in subject)
                 {
                     updateSubject.Id = x.Id;
                     updateSubject.SubjectName = x.SubjectName;
@@ -275,7 +273,7 @@ namespace IS.Pages
             int id = 0;
             try
             {
-                foreach(var item in subject)
+                foreach (var item in subject)
                 {
                     id = item.Id;
                 }
@@ -306,7 +304,7 @@ namespace IS.Pages
             {
                 Score updateScore = new Score();
 
-                foreach(var x in score)
+                foreach (var x in score)
                 {
                     updateScore.Id = x.Id;
                     updateScore.StudentsId = x.StudentsId;
@@ -340,7 +338,7 @@ namespace IS.Pages
             int id = 0;
             try
             {
-                foreach(var item in score)
+                foreach (var item in score)
                 {
                     id = item.Id;
                 }
